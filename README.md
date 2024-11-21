@@ -97,5 +97,22 @@ El Hito 1 cubre los siguientes puntos:
 3. Definición y creación del modelo Inmueble en la aplicación gestion_inmuebles.
 4. Ejecución de migraciones para reflejar los cambios en la base de datos.
 
+### Hito 2: Creación de Relaciones en el Modelo y Verificación de su Funcionamiento
+El Hito 2 cubre los siguientes puntos:
+
+1. Definición del Modelo TipoInmueble:
+
+2. Se ha creado un nuevo modelo TipoInmueble con el campo tipo que almacena los diferentes tipos de inmuebles (por ejemplo, "Casa", "Departamento", "Parcela").Este modelo permite categorizar los inmuebles y establecer una relación con el modelo Inmueble.
+Modificación del Modelo Inmueble:
+
+3. Se ha añadido una relación de tipo ForeignKey en el modelo Inmueble para asociar cada inmueble con un tipo específico (TipoInmueble).Esto permite que cada inmueble esté relacionado con un tipo de inmueble, y la relación se maneja mediante una clave foránea.
+Registro de Modelos en el Panel de Administración:
+
+4. Se han registrado ambos modelos (Inmueble y TipoInmueble) en el panel de administración de Django para facilitar la gestión de estos desde la interfaz web. De esta manera, se pueden crear, editar y eliminar inmuebles y tipos de inmuebles directamente desde el panel de administración.
+Pruebas desde el Shell de Django.
+
+5. Se ha validado que el panel de administración de Django muestra correctamente los modelos Inmueble y TipoInmueble.
+Además, se ha probado la creación de inmuebles directamente desde la interfaz de administración.
+
 ## Autor  
 **Karen Limarí**
