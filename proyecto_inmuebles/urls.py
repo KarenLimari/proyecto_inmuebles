@@ -20,6 +20,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('auth/', include('django.contrib.auth.urls')),  # Esta línea incluye las URLs para login, logout y password_change
-    path('', include('gestion_inmuebles.urls')),  # Incluye las URLs de la app 'gestion_inmuebles'
+    path('auth/', include('django.contrib.auth.urls')),  
+    path('', include('gestion_inmuebles.urls')),  
 ]
