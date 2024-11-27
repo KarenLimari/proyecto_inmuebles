@@ -1,20 +1,27 @@
-<!-- templates/base.html -->
+<!-- base.html -->
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mi Proyecto Inmuebles</title>
+    <title>Inmobiliaria</title>
   </head>
   <body>
+    <header>
+      <h1>Inmobiliaria</h1>
+    </header>
+
     <nav>
-      <a href="{% url 'home' %}">Inicio</a> | {% if user.is_authenticated %}
-      <a href="{% url 'logout' %}">Cerrar sesión</a>
-      {% else %}
-      <a href="{% url 'login' %}">Iniciar sesión</a>
-      {% endif %}
+      <!-- Aquí iría tu barra de navegación -->
     </nav>
 
-    <div>{% block content %} {% endblock %}</div>
+    <main>
+      <!-- Este bloque define el área donde las plantillas hijas pueden agregar su contenido -->
+      {% block content %} {% endblock %}
+    </main>
+
+    <footer>
+      <p>© 2024 Gestión de Inmuebles</p>
+    </footer>
   </body>
 </html>

@@ -1,5 +1,17 @@
-<!-- gestion_inmuebles/templates/home.html -->
-{% extends 'base.html' %} {% block content %}
-<h2>Bienvenido a la página principal</h2>
-<p>¡Has iniciado sesión correctamente!</p>
+{% extends 'base.html' %}
+
+{% block title %}
+
+Bienvenido a Gestión de Inmuebles
+{%endblock %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <h2 class="mb-3">¡Bienvenido, {{ user.username }}!</h2>
+    <p>
+      En este sitio puedes gestionar inmuebles, tanto como arrendatario o
+      arrendador. Selecciona una opción a continuación:
+    </p>
+  </div>
+</div>
 {% endblock %}

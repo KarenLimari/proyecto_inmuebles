@@ -17,9 +17,14 @@ Including another URLconf
 # proyecto_inmuebles/urls.py
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.auth.views import LoginView, LogoutView
+from gestion_inmuebles import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('auth/', include('django.contrib.auth.urls')),  
-    path('', include('gestion_inmuebles.urls')),  
+    path('auth/', include('django.contrib.auth.urls')),
+    path('login/', LoginView.as_view(), name='login'),
+    path('logout/', LogoutView.as_view(), name='logout'),
+    path('', include('gestion_inmuebles.urls')),
+    path('choose_user_type/', views.choose_user_type, name='choose_user_type'),
 ]

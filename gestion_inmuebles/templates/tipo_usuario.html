@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Selecciona tu tipo de usuario{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Selecciona tu tipo de usuario</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}  <!-- Renderiza el formulario -->
+        <button type="submit" class="btn btn-primary w-100">Guardar</button>
+    </form>
+</div>
+{% endblock %}
