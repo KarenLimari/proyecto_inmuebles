@@ -114,5 +114,29 @@ Pruebas desde el Shell de Django.
 5. Se ha validado que el panel de administración de Django muestra correctamente los modelos Inmueble y TipoInmueble.
 Además, se ha probado la creación de inmuebles directamente desde la interfaz de administración.
 
+### Hito 2: Autenticación de Usuarios con Django-Auth
+Este hito incluye la implementación de un sistema de autenticación de usuarios, gestionando permisos y grupos específicos para arrendadores y arrendatarios.
+
+1. Configuración de la Autenticación
+Se configuraron las aplicaciones django.contrib.auth y django.contrib.contenttypes en el archivo settings.py.
+Se crearon las URLs para las vistas de autenticación (registro, inicio y cierre de sesión).
+Se creó un superusuario para poder acceder al panel de administración de Django.
+
+2. Creación de la Vista y Formulario de Registro
+Se implementó el formulario de registro utilizando UserCreationForm.
+Se diseñó la vista y el template HTML para el formulario de registro.
+Se verificó que los usuarios pueden registrarse correctamente y se les asigna el tipo de usuario (arrendatario o arrendador).
+
+3. Creación de las Vistas de Inicio y Cierre de Sesión
+Se crearon las vistas de inicio y cierre de sesión utilizando LoginView y LogoutView.
+Se diseñaron los templates HTML para las vistas de inicio y cierre de sesión.
+Se comprobó que los usuarios pueden iniciar y cerrar sesión correctamente.
+
+4. Gestión de Permisos y Grupos de Usuarios
+Se configuraron permisos específicos para arrendadores y arrendatarios.
+Se crearon y asignaron grupos de usuarios con permisos específicos:
+Arrendatarios: Permiso para listar propiedades y generar solicitudes de arriendo.
+Arrendadores: Permiso para crear, editar, eliminar y listar propiedades, así como aceptar arrendatarios.
+
 ## Autor  
 **Karen Limarí**

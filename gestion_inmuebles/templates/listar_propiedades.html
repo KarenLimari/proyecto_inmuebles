@@ -1,0 +1,13 @@
+<!-- templates/listar_propiedades.html -->
+{% extends 'base.html' %}
+
+{% block title %}Listado de Propiedades{% endblock %}
+
+{% block content %}
+<h2>Propiedades Disponibles</h2>
+<ul>
+    {% for inmueble in inmuebles %}
+        <li>{{ inmueble.nombre }} - {{ inmueble.comuna.nombre }} - ${{ inmueble.precio_mensual }} por mes</li>
+    {% endfor %}
+</ul>
+{% endblock %}
