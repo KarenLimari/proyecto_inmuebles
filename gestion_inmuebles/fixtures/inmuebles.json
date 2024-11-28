@@ -1,0 +1,273 @@
+[
+    {
+      "model": "gestion_inmuebles.inmueble",
+      "pk": 1,
+      "fields": {
+        "nombre": "Casa 1",
+        "descripcion": "Casa grande en zona céntrica",
+        "m2_construidos": 100.5,
+        "m2_totales": 150.5,
+        "estacionamientos": 2,
+        "habitaciones": 3,
+        "banos": 2,
+        "direccion": "Calle Falsa 123",
+        "comuna": 1,
+        "tipo_inmueble": 1,
+        "precio_mensual": 500000,
+        "usuario": 1
+      }
+    },
+    {
+      "model": "gestion_inmuebles.inmueble",
+      "pk": 2,
+      "fields": {
+        "nombre": "Departamento 1",
+        "descripcion": "Departamento en el centro de la ciudad",
+        "m2_construidos": 60.0,
+        "m2_totales": 80.0,
+        "estacionamientos": 1,
+        "habitaciones": 2,
+        "banos": 1,
+        "direccion": "Avenida Siempre Viva 742",
+        "comuna": 2,
+        "tipo_inmueble": 2,
+        "precio_mensual": 350000,
+        "usuario": 2
+      }
+    },
+    {
+      "model": "gestion_inmuebles.inmueble",
+      "pk": 3,
+      "fields": {
+        "nombre": "Parcela 1",
+        "descripcion": "Parcela en las afueras de la ciudad",
+        "m2_construidos": 200.0,
+        "m2_totales": 5000.0,
+        "estacionamientos": 3,
+        "habitaciones": 5,
+        "banos": 3,
+        "direccion": "Calle del Sol 300",
+        "comuna": 3,
+        "tipo_inmueble": 3,
+        "precio_mensual": 800000,
+        "usuario": 3
+      }
+    },
+    {
+      "model": "gestion_inmuebles.inmueble",
+      "pk": 4,
+      "fields": {
+        "nombre": "Casa 2",
+        "descripcion": "Casa con jardín grande",
+        "m2_construidos": 120.0,
+        "m2_totales": 200.0,
+        "estacionamientos": 2,
+        "habitaciones": 4,
+        "banos": 3,
+        "direccion": "Avenida Libertador 1540",
+        "comuna": 4,
+        "tipo_inmueble": 1,
+        "precio_mensual": 600000,
+        "usuario": 4
+      }
+    },
+    {
+      "model": "gestion_inmuebles.inmueble",
+      "pk": 5,
+      "fields": {
+        "nombre": "Departamento 2",
+        "descripcion": "Departamento en edificio moderno",
+        "m2_construidos": 80.0,
+        "m2_totales": 100.0,
+        "estacionamientos": 1,
+        "habitaciones": 3,
+        "banos": 2,
+        "direccion": "Calle de la Luna 500",
+        "comuna": 5,
+        "tipo_inmueble": 2,
+        "precio_mensual": 450000,
+        "usuario": 5
+      }
+    },
+    {
+      "model": "gestion_inmuebles.inmueble",
+      "pk": 6,
+      "fields": {
+        "nombre": "Parcela 2",
+        "descripcion": "Parcela en zona rural",
+        "m2_construidos": 250.0,
+        "m2_totales": 6000.0,
+        "estacionamientos": 4,
+        "habitaciones": 6,
+        "banos": 4,
+        "direccion": "Ruta 5 Sur, Km 30",
+        "comuna": 6,
+        "tipo_inmueble": 3,
+        "precio_mensual": 1000000,
+        "usuario": 6
+      }
+    },
+    {
+      "model": "gestion_inmuebles.inmueble",
+      "pk": 7,
+      "fields": {
+        "nombre": "Casa 3",
+        "descripcion": "Casa con piscina y jardines",
+        "m2_construidos": 150.0,
+        "m2_totales": 250.0,
+        "estacionamientos": 2,
+        "habitaciones": 4,
+        "banos": 3,
+        "direccion": "Calle del Río 1234",
+        "comuna": 7,
+        "tipo_inmueble": 1,
+        "precio_mensual": 700000,
+        "usuario": 7
+      }
+    },
+    {
+      "model": "gestion_inmuebles.inmueble",
+      "pk": 8,
+      "fields": {
+        "nombre": "Departamento 3",
+        "descripcion": "Departamento en el centro financiero",
+        "m2_construidos": 65.0,
+        "m2_totales": 90.0,
+        "estacionamientos": 1,
+        "habitaciones": 2,
+        "banos": 1,
+        "direccion": "Avenida El Golf 567",
+        "comuna": 8,
+        "tipo_inmueble": 2,
+        "precio_mensual": 400000,
+        "usuario": 8
+      }
+    },
+    {
+      "model": "gestion_inmuebles.inmueble",
+      "pk": 9,
+      "fields": {
+        "nombre": "Parcela 3",
+        "descripcion": "Parcela de descanso con vista a la montaña",
+        "m2_construidos": 300.0,
+        "m2_totales": 7000.0,
+        "estacionamientos": 3,
+        "habitaciones": 6,
+        "banos": 4,
+        "direccion": "Calle Las Higueras 4000",
+        "comuna": 9,
+        "tipo_inmueble": 3,
+        "precio_mensual": 1200000,
+        "usuario": 9
+      }
+    },
+    {
+      "model": "gestion_inmuebles.inmueble",
+      "pk": 10,
+      "fields": {
+        "nombre": "Casa 4",
+        "descripcion": "Casa cerca de la playa",
+        "m2_construidos": 180.0,
+        "m2_totales": 300.0,
+        "estacionamientos": 2,
+        "habitaciones": 4,
+        "banos": 3,
+        "direccion": "Avenida Playa 1000",
+        "comuna": 10,
+        "tipo_inmueble": 1,
+        "precio_mensual": 750000,
+        "usuario": 10
+      }
+    },
+    {
+      "model": "gestion_inmuebles.inmueble",
+      "pk": 11,
+      "fields": {
+        "nombre": "Departamento 4",
+        "descripcion": "Departamento con vista al mar",
+        "m2_construidos": 70.0,
+        "m2_totales": 85.0,
+        "estacionamientos": 1,
+        "habitaciones": 2,
+        "banos": 1,
+        "direccion": "Calle Mar 123",
+        "comuna": 11,
+        "tipo_inmueble": 2,
+        "precio_mensual": 500000,
+        "usuario": 1
+      }
+    },
+    {
+      "model": "gestion_inmuebles.inmueble",
+      "pk": 12,
+      "fields": {
+        "nombre": "Parcela 4",
+        "descripcion": "Parcela para camping",
+        "m2_construidos": 120.0,
+        "m2_totales": 8000.0,
+        "estacionamientos": 5,
+        "habitaciones": 8,
+        "banos": 5,
+        "direccion": "Calle del Bosque 850",
+        "comuna": 12,
+        "tipo_inmueble": 3,
+        "precio_mensual": 1500000,
+        "usuario": 2
+      }
+    },
+    {
+      "model": "gestion_inmuebles.inmueble",
+      "pk": 13,
+      "fields": {
+        "nombre": "Casa 5",
+        "descripcion": "Casa moderna en el campo",
+        "m2_construidos": 220.0,
+        "m2_totales": 350.0,
+        "estacionamientos": 3,
+        "habitaciones": 5,
+        "banos": 4,
+        "direccion": "Avenida Rural 2000",
+        "comuna": 13,
+        "tipo_inmueble": 1,
+        "precio_mensual": 900000,
+        "usuario": 3
+      }
+    },
+    {
+      "model": "gestion_inmuebles.inmueble",
+      "pk": 14,
+      "fields": {
+        "nombre": "Departamento 5",
+        "descripcion": "Departamento amoblado",
+        "m2_construidos": 90.0,
+        "m2_totales": 120.0,
+        "estacionamientos": 1,
+        "habitaciones": 3,
+        "banos": 2,
+        "direccion": "Calle Bella 1020",
+        "comuna": 14,
+        "tipo_inmueble": 2,
+        "precio_mensual": 600000,
+        "usuario": 4
+      }
+    },
+    {
+      "model": "gestion_inmuebles.inmueble",
+      "pk": 15,
+      "fields": {
+        "nombre": "Parcela 5",
+        "descripcion": "Parcela con espacio para agricultura",
+        "m2_construidos": 150.0,
+        "m2_totales": 9000.0,
+        "estacionamientos": 2,
+        "habitaciones": 4,
+        "banos": 3,
+        "direccion": "Calle Las Amapolas 700",
+        "comuna": 15,
+        "tipo_inmueble": 3,
+        "precio_mensual": 1100000,
+        "usuario": 5
+      }
+    }
+  ]
+  

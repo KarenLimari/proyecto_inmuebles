@@ -1,0 +1,26 @@
+[
+    {
+        "model": "gestion_inmuebles.comuna",
+        "pk": 1,
+        "fields": {
+            "nombre": "Santiago",
+            "region": 1
+        }
+    },
+    {
+        "model": "gestion_inmuebles.comuna",
+        "pk": 2,
+        "fields": {
+            "nombre": "Vi\u00f1a del Mar",
+            "region": 2
+        }
+    },
+    {
+        "model": "gestion_inmuebles.comuna",
+        "pk": 3,
+        "fields": {
+            "nombre": "Rancagua",
+            "region": 3
+        }
+    }
+]

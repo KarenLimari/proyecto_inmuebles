@@ -1,0 +1,23 @@
+[
+    {
+        "model": "gestion_inmuebles.region",
+        "pk": 1,
+        "fields": {
+            "nombre": "Regi\u00f3n Metropolitana"
+        }
+    },
+    {
+        "model": "gestion_inmuebles.region",
+        "pk": 2,
+        "fields": {
+            "nombre": "Valpara\u00edso"
+        }
+    },
+    {
+        "model": "gestion_inmuebles.region",
+        "pk": 3,
+        "fields": {
+            "nombre": "O'Higgins"
+        }
+    }
+]
