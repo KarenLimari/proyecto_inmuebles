@@ -17,6 +17,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_REDIRECT_URL = 'home'  # O la URL que desees
 
 # Application definition
 
@@ -94,6 +95,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'gestion_inmuebles.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/

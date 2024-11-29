@@ -4,14 +4,15 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth.models import Group
-from .forms import TipoUsuarioForm  # Importar el formulario
+from .forms import CustomUserCreationForm, TipoUsuarioForm
+ # Importar el formulario
 from .models import Inmueble # Importar el formulario
 
 def home(request):
     return render(request, 'home.html')  # Renderiza el template home.html
 def register(request):
     if request.method == 'POST':
-        user_form = UserCreationForm(request.POST)
+        user_form = CustomUserCreationForm(request.POST)  # Cambiar a formulario personalizado
         tipo_usuario_form = TipoUsuarioForm(request.POST)
         
         if user_form.is_valid() and tipo_usuario_form.is_valid():
@@ -36,7 +37,7 @@ def register(request):
             return redirect('home')  # Redirige a la página de inicio o a la página que desees
 
     else:
-        user_form = UserCreationForm()
+        user_form = CustomUserCreationForm()  # Cambiar a formulario personalizado
         tipo_usuario_form = TipoUsuarioForm()
 
     return render(request, 'registration/register.html', {'user_form': user_form, 'tipo_usuario_form': tipo_usuario_form})

@@ -1,23 +1,26 @@
-{% extends 'base.html' %}
+<form method="POST">
+  {% csrf_token %}
 
-{% block title %}Registro{% endblock %}
+  <!-- Formulario de usuario -->
+  <div>
+      <label for="id_username">Username:</label>
+      {{ user_form.username }}
 
-{% block content %}
-  <h2>Registro de Usuario</h2>
-  
-  <form method="POST">
-    {% csrf_token %}
-    
-    <!-- Formulario de registro -->
-    <div>
-      {{ user_form.as_p }}
-    </div>
-    
-    <!-- Formulario de tipo de usuario -->
-    <div>
-      {{ tipo_usuario_form.as_p }}
-    </div>
+      <label for="id_password1">Password:</label>
+      {{ user_form.password1 }}
 
-    <button type="submit">Registrar</button>
-  </form>
-{% endblock %}
+      <label for="id_password2">Confirmar Password:</label>
+      {{ user_form.password2 }}
+
+      <label for="id_rut">RUT:</label>
+      {{ user_form.rut }}
+  </div>
+
+  <!-- Formulario de tipo de usuario -->
+  <div>
+      <label for="id_tipo_usuario">Tipo de Usuario:</label>
+      {{ tipo_usuario_form.tipo_usuario }}
+  </div>
+
+  <button type="submit">Registrar</button>
+</form>
