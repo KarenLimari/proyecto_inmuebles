@@ -1,113 +1,13 @@
 [
-    {
-      "model": "gestion_inmuebles.user",
-      "pk": 1,
-      "fields": {
-        "username": "arrendador1",
-        "rut": "12345678-9",
-        "direccion": "Calle Falsa 123",
-        "telefono": "987654321",
-        "tipo_usuario": "Arrendador"
-      }
-    },
-    {
-      "model": "gestion_inmuebles.user",
-      "pk": 2,
-      "fields": {
-        "username": "arrendatario1",
-        "rut": "98765432-1",
-        "direccion": "Avenida Siempre Viva 742",
-        "telefono": "912345678",
-        "tipo_usuario": "Arrendatario"
-      }
-    },
-    {
-      "model": "gestion_inmuebles.user",
-      "pk": 3,
-      "fields": {
-        "username": "arrendador2",
-        "rut": "11223344-5",
-        "direccion": "Calle Real 555",
-        "telefono": "915432876",
-        "tipo_usuario": "Arrendador"
-      }
-    },
-    {
-      "model": "gestion_inmuebles.user",
-      "pk": 4,
-      "fields": {
-        "username": "arrendatario2",
-        "rut": "55667788-9",
-        "direccion": "Calle del Sol 1500",
-        "telefono": "956783210",
-        "tipo_usuario": "Arrendatario"
-      }
-    },
-    {
-      "model": "gestion_inmuebles.user",
-      "pk": 5,
-      "fields": {
-        "username": "arrendador3",
-        "rut": "44332211-2",
-        "direccion": "Avenida Libertador 1324",
-        "telefono": "987123654",
-        "tipo_usuario": "Arrendador"
-      }
-    },
-    {
-      "model": "gestion_inmuebles.user",
-      "pk": 6,
-      "fields": {
-        "username": "arrendatario3",
-        "rut": "66778899-0",
-        "direccion": "Calle del Parque 33",
-        "telefono": "983456789",
-        "tipo_usuario": "Arrendatario"
-      }
-    },
-    {
-      "model": "gestion_inmuebles.user",
-      "pk": 7,
-      "fields": {
-        "username": "arrendador4",
-        "rut": "11223344-6",
-        "direccion": "Calle del Río 777",
-        "telefono": "998877665",
-        "tipo_usuario": "Arrendador"
-      }
-    },
-    {
-      "model": "gestion_inmuebles.user",
-      "pk": 8,
-      "fields": {
-        "username": "arrendatario4",
-        "rut": "22334455-7",
-        "direccion": "Calle de la Luna 256",
-        "telefono": "967532098",
-        "tipo_usuario": "Arrendatario"
-      }
-    },
-    {
-      "model": "gestion_inmuebles.user",
-      "pk": 9,
-      "fields": {
-        "username": "arrendador5",
-        "rut": "77889900-4",
-        "direccion": "Calle 15 de Septiembre 800",
-        "telefono": "986732134",
-        "tipo_usuario": "Arrendador"
-      }
-    },
-    {
-      "model": "gestion_inmuebles.user",
-      "pk": 10,
-      "fields": {
-        "username": "arrendatario5",
-        "rut": "88990011-5",
-        "direccion": "Avenida Central 440",
-        "telefono": "987654320",
-        "tipo_usuario": "Arrendatario"
-      }
-    }
-  ]
-  
+    {"model": "gestion_inmuebles.user", "pk": 1, "fields": {"username": "arrendador1", "rut": "12345678-9", "direccion": "Dirección 1", "telefono": "987654321", "tipo_usuario": "Arrendador"}},
+    {"model": "gestion_inmuebles.user", "pk": 2, "fields": {"username": "arrendatario1", "rut": "98765432-1", "direccion": "Dirección 2", "telefono": "987654322", "tipo_usuario": "Arrendatario"}},
+    {"model": "gestion_inmuebles.user", "pk": 3, "fields": {"username": "arrendador2", "rut": "23456789-0", "direccion": "Dirección 3", "telefono": "987654323", "tipo_usuario": "Arrendador"}},
+    {"model": "gestion_inmuebles.user", "pk": 4, "fields": {"username": "arrendatario2", "rut": "87654321-0", "direccion": "Dirección 4", "telefono": "987654324", "tipo_usuario": "Arrendatario"}},
+    {"model": "gestion_inmuebles.user", "pk": 5, "fields": {"username": "arrendador3", "rut": "34567890-1", "direccion": "Dirección 5", "telefono": "987654325", "tipo_usuario": "Arrendador"}},
+    {"model": "gestion_inmuebles.user", "pk": 6, "fields": {"username": "arrendatario3", "rut": "76543210-1", "direccion": "Dirección 6", "telefono": "987654326", "tipo_usuario": "Arrendatario"}},
+    {"model": "gestion_inmuebles.user", "pk": 7, "fields": {"username": "arrendador4", "rut": "45678901-2", "direccion": "Dirección 7", "telefono": "987654327", "tipo_usuario": "Arrendador"}},
+    {"model": "gestion_inmuebles.user", "pk": 8, "fields": {"username": "arrendatario4", "rut": "65432109-2", "direccion": "Dirección 8", "telefono": "987654328", "tipo_usuario": "Arrendatario"}},
+    {"model": "gestion_inmuebles.user", "pk": 9, "fields": {"username": "arrendador5", "rut": "56789012-3", "direccion": "Dirección 9", "telefono": "987654329", "tipo_usuario": "Arrendador"}},
+    {"model": "gestion_inmuebles.user", "pk": 10, "fields": {"username": "arrendatario5", "rut": "54321098-3", "direccion": "Dirección 10", "telefono": "987654330", "tipo_usuario": "Arrendatario"}}
+]
+

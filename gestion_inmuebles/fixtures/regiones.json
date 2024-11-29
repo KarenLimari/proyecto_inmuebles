@@ -1,23 +1,18 @@
 [
-    {
-        "model": "gestion_inmuebles.region",
-        "pk": 1,
-        "fields": {
-            "nombre": "Regi\u00f3n Metropolitana"
-        }
-    },
-    {
-        "model": "gestion_inmuebles.region",
-        "pk": 2,
-        "fields": {
-            "nombre": "Valpara\u00edso"
-        }
-    },
-    {
-        "model": "gestion_inmuebles.region",
-        "pk": 3,
-        "fields": {
-            "nombre": "O'Higgins"
-        }
-    }
+    {"model": "gestion_inmuebles.region", "pk": 1, "fields": {"nombre": "Arica y Parinacota"}},
+    {"model": "gestion_inmuebles.region", "pk": 2, "fields": {"nombre": "Tarapacá"}},
+    {"model": "gestion_inmuebles.region", "pk": 3, "fields": {"nombre": "Antofagasta"}},
+    {"model": "gestion_inmuebles.region", "pk": 4, "fields": {"nombre": "Atacama"}},
+    {"model": "gestion_inmuebles.region", "pk": 5, "fields": {"nombre": "Coquimbo"}},
+    {"model": "gestion_inmuebles.region", "pk": 6, "fields": {"nombre": "Valparaíso"}},
+    {"model": "gestion_inmuebles.region", "pk": 7, "fields": {"nombre": "Región Metropolitana de Santiago"}},
+    {"model": "gestion_inmuebles.region", "pk": 8, "fields": {"nombre": "O'Higgins"}},
+    {"model": "gestion_inmuebles.region", "pk": 9, "fields": {"nombre": "Maule"}},
+    {"model": "gestion_inmuebles.region", "pk": 10, "fields": {"nombre": "Ñuble"}},
+    {"model": "gestion_inmuebles.region", "pk": 11, "fields": {"nombre": "Biobío"}},
+    {"model": "gestion_inmuebles.region", "pk": 12, "fields": {"nombre": "La Araucanía"}},
+    {"model": "gestion_inmuebles.region", "pk": 13, "fields": {"nombre": "Los Ríos"}},
+    {"model": "gestion_inmuebles.region", "pk": 14, "fields": {"nombre": "Los Lagos"}},
+    {"model": "gestion_inmuebles.region", "pk": 15, "fields": {"nombre": "Aysén del General Carlos Ibáñez del Campo"}},
+    {"model": "gestion_inmuebles.region", "pk": 16, "fields": {"nombre": "Magallanes y de la Antártica Chilena"}}
 ]

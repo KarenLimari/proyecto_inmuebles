@@ -1,24 +1,5 @@
 [
-    {
-      "model": "gestion_inmuebles.tipoinmueble",
-      "pk": 1,
-      "fields": {
-        "tipo": "Casa"
-      }
-    },
-    {
-      "model": "gestion_inmuebles.tipoinmueble",
-      "pk": 2,
-      "fields": {
-        "tipo": "Departamento"
-      }
-    },
-    {
-      "model": "gestion_inmuebles.tipoinmueble",
-      "pk": 3,
-      "fields": {
-        "tipo": "Parcela"
-      }
-    }
-  ]
-  
+    {"model": "gestion_inmuebles.tipoinmueble", "pk": 1, "fields": {"tipo": "Casa"}},
+    {"model": "gestion_inmuebles.tipoinmueble", "pk": 2, "fields": {"tipo": "Departamento"}},
+    {"model": "gestion_inmuebles.tipoinmueble", "pk": 3, "fields": {"tipo": "Parcela"}}
+]

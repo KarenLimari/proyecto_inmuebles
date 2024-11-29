@@ -1,26 +1,32 @@
 [
-    {
-        "model": "gestion_inmuebles.comuna",
-        "pk": 1,
-        "fields": {
-            "nombre": "Santiago",
-            "region": 1
-        }
-    },
-    {
-        "model": "gestion_inmuebles.comuna",
-        "pk": 2,
-        "fields": {
-            "nombre": "Vi\u00f1a del Mar",
-            "region": 2
-        }
-    },
-    {
-        "model": "gestion_inmuebles.comuna",
-        "pk": 3,
-        "fields": {
-            "nombre": "Rancagua",
-            "region": 3
-        }
-    }
+    {"model": "gestion_inmuebles.comuna", "pk": 1, "fields": {"nombre": "Arica", "region": 1}},
+    {"model": "gestion_inmuebles.comuna", "pk": 2, "fields": {"nombre": "Iquique", "region": 2}},
+    {"model": "gestion_inmuebles.comuna", "pk": 3, "fields": {"nombre": "Antofagasta", "region": 3}},
+    {"model": "gestion_inmuebles.comuna", "pk": 4, "fields": {"nombre": "Copiapó", "region": 4}},
+    {"model": "gestion_inmuebles.comuna", "pk": 5, "fields": {"nombre": "La Serena", "region": 5}},
+    {"model": "gestion_inmuebles.comuna", "pk": 6, "fields": {"nombre": "Valparaíso", "region": 6}},
+    {"model": "gestion_inmuebles.comuna", "pk": 7, "fields": {"nombre": "Santiago", "region": 7}},
+    {"model": "gestion_inmuebles.comuna", "pk": 8, "fields": {"nombre": "Rancagua", "region": 8}},
+    {"model": "gestion_inmuebles.comuna", "pk": 9, "fields": {"nombre": "Talca", "region": 9}},
+    {"model": "gestion_inmuebles.comuna", "pk": 10, "fields": {"nombre": "Chillán", "region": 10}},
+    {"model": "gestion_inmuebles.comuna", "pk": 11, "fields": {"nombre": "Concepción", "region": 11}},
+    {"model": "gestion_inmuebles.comuna", "pk": 12, "fields": {"nombre": "Temuco", "region": 12}},
+    {"model": "gestion_inmuebles.comuna", "pk": 13, "fields": {"nombre": "Valdivia", "region": 13}},
+    {"model": "gestion_inmuebles.comuna", "pk": 14, "fields": {"nombre": "Puerto Montt", "region": 14}},
+    {"model": "gestion_inmuebles.comuna", "pk": 15, "fields": {"nombre": "Coyhaique", "region": 15}},
+    {"model": "gestion_inmuebles.comuna", "pk": 16, "fields": {"nombre": "Punta Arenas", "region": 16}},
+    {"model": "gestion_inmuebles.comuna", "pk": 17, "fields": {"nombre": "Arica", "region": 1}},
+    {"model": "gestion_inmuebles.comuna", "pk": 18, "fields": {"nombre": "Iquique", "region": 2}},
+    {"model": "gestion_inmuebles.comuna", "pk": 19, "fields": {"nombre": "Calama", "region": 3}},
+    {"model": "gestion_inmuebles.comuna", "pk": 20, "fields": {"nombre": "Vallenar", "region": 4}},
+    {"model": "gestion_inmuebles.comuna", "pk": 21, "fields": {"nombre": "Ovalle", "region": 5}},
+    {"model": "gestion_inmuebles.comuna", "pk": 22, "fields": {"nombre": "Viña del Mar", "region": 6}},
+    {"model": "gestion_inmuebles.comuna", "pk": 23, "fields": {"nombre": "San Bernardo", "region": 7}},
+    {"model": "gestion_inmuebles.comuna", "pk": 24, "fields": {"nombre": "Machalí", "region": 8}},
+    {"model": "gestion_inmuebles.comuna", "pk": 25, "fields": {"nombre": "Curicó", "region": 9}},
+    {"model": "gestion_inmuebles.comuna", "pk": 26, "fields": {"nombre": "Penco", "region": 11}},
+    {"model": "gestion_inmuebles.comuna", "pk": 27, "fields": {"nombre": "Villarrica", "region": 12}},
+    {"model": "gestion_inmuebles.comuna", "pk": 28, "fields": {"nombre": "Lanco", "region": 13}},
+    {"model": "gestion_inmuebles.comuna", "pk": 29, "fields": {"nombre": "Osorno", "region": 14}},
+    {"model": "gestion_inmuebles.comuna", "pk": 30, "fields": {"nombre": "Puerto Aysén", "region": 15}}
 ]
