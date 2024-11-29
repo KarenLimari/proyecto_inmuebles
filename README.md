@@ -138,5 +138,45 @@ Se crearon y asignaron grupos de usuarios con permisos específicos:
 Arrendatarios: Permiso para listar propiedades y generar solicitudes de arriendo.
 Arrendadores: Permiso para crear, editar, eliminar y listar propiedades, así como aceptar arrendatarios.
 
+### Hito 3: Registro y Gestión de Propiedades para Arrendadores y Arrendatarios
+
+Este hito incluye la implementación de un sistema de registro de usuarios, asignación de roles (arrendatario o arrendador) y la gestión de propiedades. Los arrendadores pueden publicar, editar y eliminar propiedades, mientras que los arrendatarios pueden ver las propiedades disponibles.
+
+1. **Registro de Usuarios**
+   - Se implementó un formulario personalizado de registro (`CustomUserCreationForm`) que incluye campos como `username`, `password`, `password_confirmation` y `rut`.
+   - Se añadió un formulario adicional para seleccionar el tipo de usuario (`TipoUsuarioForm`), permitiendo elegir entre `Arrendatario` o `Arrendador`.
+   - Los usuarios se registran correctamente y se asignan al grupo correspondiente (Arrendatario o Arrendador) según su elección.
+   - Se implementó la redirección automática después del registro al inicio de sesión o a la página principal.
+
+2. **Vistas de Registro y Login**
+   - Se creó la vista de registro, donde los usuarios pueden registrarse y elegir su tipo (arrendatario o arrendador).
+   - Se implementaron las vistas de inicio de sesión (`LoginView`) y cierre de sesión (`LogoutView`), junto con sus correspondientes templates HTML.
+   - Se añadió redirección post-login a la página principal o a la vista de inicio de sesión.
+
+3. **Gestión de Propiedades**
+   - Se implementaron las vistas para la gestión de propiedades por parte de los arrendadores:
+     - **Publicar Propiedad**: Los arrendadores pueden crear nuevas propiedades.
+     - **Editar Propiedad**: Los arrendadores pueden editar las propiedades existentes.
+     - **Eliminar Propiedad**: Los arrendadores pueden eliminar propiedades.
+   - Se aseguraron de que solo los arrendadores puedan acceder a estas vistas mediante el uso de permisos (`@permission_required`).
+   - Los arrendatarios tienen acceso a la vista para listar las propiedades disponibles.
+
+4. **Grupos y Permisos**
+   - Se crearon los grupos de usuarios `Arrendatario` y `Arrendador` en el panel de administración de Django.
+   - Se asignaron permisos específicos a cada grupo:
+     - **Arrendatario**: Permiso para listar propiedades y solicitar arrendamientos.
+     - **Arrendador**: Permiso para publicar, editar, eliminar y listar propiedades.
+   - Se asignan automáticamente a los usuarios registrados en el grupo correspondiente durante el proceso de registro.
+
+5. **Verificación y Redirección**
+   - Después de completar el registro, los usuarios son redirigidos a la página de inicio o a la vista de inicio de sesión.
+   - Se verificó que los usuarios se registren correctamente en la base de datos y que se asignen a los grupos correspondientes, con los permisos adecuados.
+
+6. **Próximos Pasos**
+   - Implementar la lógica de aceptación de solicitudes de arrendatarios por parte de los arrendadores.
+   - Mejorar las validaciones en los formularios y agregar mensajes de retroalimentación para el usuario.
+   - Agregar pruebas unitarias para asegurar la integridad del sistema de registro y gestión de propiedades.
+
+
 ## Autor  
 **Karen Limarí**
