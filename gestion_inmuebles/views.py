@@ -34,7 +34,10 @@ def register(request):
             # Asignar al usuario el grupo correspondiente
             user.groups.add(group)
 
-            return redirect('home')  # Redirige a la página de inicio o a la página que desees
+            return redirect('home')
+        else:
+            # Bloque para depurar errores si los formularios no son válidos
+            print(user_form.errors, tipo_usuario_form.errors) # Redirige a la página de inicio o a la página que desees
 
     else:
         user_form = CustomUserCreationForm()  # Cambiar a formulario personalizado
