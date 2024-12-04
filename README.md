@@ -178,5 +178,30 @@ Este hito incluye la implementación de un sistema de registro de usuarios, asig
    - Agregar pruebas unitarias para asegurar la integridad del sistema de registro y gestión de propiedades.
 
 
+### Funcionalidades Implementadas en el Hito 4
+
+1. Registro y Gestión de Usuarios
+Los usuarios pueden registrarse como Arrendatario o Arrendador.
+El registro incluye un formulario personalizado donde se asigna el tipo de usuario.
+Los perfiles se crean automáticamente para cada usuario.
+La asignación de grupos (Arrendatario o Arrendador) se realiza al momento de la creación del usuario.
+2. Publicación de Propiedades (Inmuebles)
+Los arrendadores pueden publicar propiedades mediante un formulario.
+El formulario permite subir varias imágenes para cada propiedad y asociarlas al inmueble.
+La vista de "Publicar Inmueble" tiene un diseño atractivo utilizando Bootstrap.
+3. Visualización de Propiedades (Listar Inmuebles)
+Los usuarios pueden ver una lista de propiedades con detalles como nombre, precio, y ubicación.
+Las propiedades se muestran en un formato de cards en la página de inicio, con imágenes, nombre y precio.
+El precio de los inmuebles se muestra en formato CLP (Pesos Chilenos).
+4. Detalles de Propiedades
+Al hacer clic en un inmueble desde la lista, se redirige al usuario a una página de detalles con una galería de imágenes (carrusel).
+Se muestran las características del inmueble, como el precio mensual, la ubicación, el número de habitaciones, etc.
+5. Carro de Imágenes
+Las imágenes de cada propiedad pueden ser visualizadas en un carrusel responsivo en la página de detalles del inmueble.
+6. Página Principal
+En la página principal, se muestra un carrusel de imágenes de propiedades destacadas.
+La página está organizada para mostrar las propiedades de manera atractiva, con diseño responsivo.
+
+
 ## Autor  
 **Karen Limarí C.**
