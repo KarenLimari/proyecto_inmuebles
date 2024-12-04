@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Bienvenido a Inmobiliaria{% endblock %}
+{% block title %}Bienvenido a Áurea Inmobiliaria{% endblock %}
 {% block content %}
   <!-- Carrusel de imágenes con leyenda, ahora en ancho completo y responsivo -->
   <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
@@ -58,41 +58,85 @@
     </button>
   </div>
 
-<!-- Texto de bienvenida debajo del carrusel, con un diseño bonito y color pastel -->
-<div class="container-fluid py-3" style="background-color: #f7f8fa; border-radius: 10px; padding-left: 0; padding-right: 0;">
-  <div class="row justify-content-center">
-    <div class="col-lg-8 col-md-10 text-center">
-      <h2 class="text-dark mb-3" style="font-family: 'Roboto', sans-serif; font-size: 2rem;">Bienvenido a nuestra Inmobiliaria</h2>
-      <p class="lead text-dark" style="font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 1.1rem;">
-        Encuentra el hogar de tus sueños con nosotros. Explora nuestras propiedades y elige el lugar ideal para ti y tu familia.
-      </p>
-    </div>
-    <div class="container py-5">
-      <h2 class="text-center mb-4">Propiedades Destacadas</h2>
-      <div class="row">
-        {% for inmueble in inmuebles_destacados %}
-        <div class="col-md-4">
-          <div class="card shadow-sm mb-4">
-            <img 
-              src="{{ inmueble.imagenes.first.imagen.url }}" 
-              class="card-img-top" 
-              alt="{{ inmueble.nombre }}" 
-              style="height: 200px; object-fit: cover;"
-            >
-            <div class="card-body">
-              <h5 class="card-title">{{ inmueble.nombre }}</h5>
-              <p class="card-text">
-                <strong>Precio:</strong> ${{ inmueble.precio_mensual|floatformat:0 }} CLP
-              </p>
-              <a href="{% url 'detalle_inmueble' slug=inmueble.slug %}" class="btn btn-primary">Ver más</a>
+  <!-- Sección de la inmobiliaria con información destacada -->
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="display-4 mb-3">¿Por qué elegir Áurea Inmobiliaria?</h2>
+        <p class="lead mb-4" style="font-size: 1.1rem; color: #555;">
+          En Áurea Inmobiliaria nos enorgullece ofrecerte una experiencia única y personalizada para encontrar la propiedad perfecta.
+          Con más de 10 años de experiencia en el mercado, nuestra misión es brindarte confianza, transparencia y atención a cada detalle.
+        </p>
+        <div class="row">
+          <!-- Beneficio 1 -->
+          <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+              <div class="card-body text-center">
+                <i class="bi bi-house-door-fill" style="font-size: 40px; color: #007bff;"></i>
+                <h5 class="card-title mt-3">Propiedades Exclusivas</h5>
+                <p class="card-text">Accede a viviendas únicas que se ajustan a tu presupuesto y necesidades.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Beneficio 2 -->
+          <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+              <div class="card-body text-center">
+                <i class="bi bi-people-fill" style="font-size: 40px; color: #007bff;"></i>
+                <h5 class="card-title mt-3">Atención Personalizada</h5>
+                <p class="card-text">Te acompañamos en todo el proceso, brindándote atención directa y experta.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Beneficio 3 -->
+          <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+              <div class="card-body text-center">
+                <i class="bi bi-graph-up-arrow" style="font-size: 40px; color: #007bff;"></i>
+                <h5 class="card-title mt-3">Rentabilidad y Crecimiento</h5>
+                <p class="card-text">Invertir con nosotros es asegurar el futuro de tu patrimonio.</p>
+              </div>
             </div>
           </div>
         </div>
-        {% endfor %}
       </div>
     </div>
-    
   </div>
-</div>
 
+  <!-- Texto de bienvenida debajo del carrusel, con un diseño bonito y color pastel -->
+  <div class="container-fluid py-3" style="background-color: #f7f8fa; border-radius: 10px; padding-left: 0; padding-right: 0;">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10 text-center">
+        <h2 class="text-dark mb-3" style="font-family: 'Roboto', sans-serif; font-size: 2rem;">Bienvenido a nuestra Inmobiliaria</h2>
+        <p class="lead text-dark" style="font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 1.1rem;">
+          Encuentra el hogar de tus sueños con nosotros. Explora nuestras propiedades y elige el lugar ideal para ti y tu familia.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <h2 class="text-center mb-4">Propiedades Destacadas</h2>
+    <div class="row">
+      {% for inmueble in inmuebles_destacados %}
+      <div class="col-md-4">
+        <div class="card shadow-sm mb-4">
+          <img 
+            src="{{ inmueble.imagenes.first.imagen.url }}" 
+            class="card-img-top" 
+            alt="{{ inmueble.nombre }}" 
+            style="height: 200px; object-fit: cover;"
+          >
+          <div class="card-body">
+            <h5 class="card-title">{{ inmueble.nombre }}</h5>
+            <p class="card-text">
+              <strong>Precio:</strong> ${{ inmueble.precio_mensual|floatformat:0 }} CLP
+            </p>
+            <a href="{% url 'detalle_inmueble' slug=inmueble.slug %}" class="btn btn-primary">Ver más</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
 {% endblock %}
