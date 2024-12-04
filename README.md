@@ -179,4 +179,4 @@ Este hito incluye la implementación de un sistema de registro de usuarios, asig
 
 
 ## Autor  
-**Karen Limarí**
+**Karen Limarí C.**

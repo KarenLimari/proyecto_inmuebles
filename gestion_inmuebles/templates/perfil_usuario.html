@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Perfil de Usuario{% endblock %}
+
+{% block content %}
+<h2>Bienvenido, {{ user.username }}</h2>
+
+<!-- Información común -->
+<p>Tipo de Usuario: {{ user.tipo_usuario }}</p>
+<a href="{% url 'editar_perfil' %}">Editar Perfil</a>
+<a href="{% url 'cambiar_contraseña' %}">Cambiar Contraseña</a>
+
+<!-- Información específica según el tipo de usuario -->
+{% if user.tipo_usuario == 'Arrendatario' %}
+    <h3>Opciones para Arrendatarios</h3>
+    <a href="{% url 'listar_propiedades' %}">Listar Propiedades</a>
+{% elif user.tipo_usuario == 'Arrendador' %}
+    <h3>Opciones para Arrendadores</h3>
+    <a href="{% url 'publicar_propiedad' %}">Publicar Propiedad</a>
+    <a href="{% url 'listar_propiedades' %}">Gestionar Propiedades</a>
+{% endif %}
+{% endblock %}

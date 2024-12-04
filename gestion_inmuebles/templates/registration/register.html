@@ -1,27 +1,33 @@
-<form method="POST">
-  {% csrf_token %}
+{% extends 'base.html' %}
 
-  
-  <!-- Formulario de usuario -->
-  <div>
-      <label for="id_username">Username:</label>
-      {{ user_form.username }}
+{% block title %}Registro{% endblock %}
 
-      <label for="id_password1">Password:</label>
-      {{ user_form.password1 }}
+{% load crispy_forms_tags %}
 
-      <label for="id_password2">Confirmar Password:</label>
-      {{ user_form.password2 }}
-
-      <label for="id_rut">RUT:</label>
-      {{ user_form.rut }}
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h2 class="text-center mb-4">Registro de Usuario</h2>
+          
+          <!-- Formulario -->
+          <form method="POST">
+            {% csrf_token %}
+            
+            <!-- Formulario completo usando crispy -->
+            {{ user_form|crispy }}
+            {{ tipo_usuario_form|crispy }}
+            
+            <!-- Botón de registro -->
+            <div class="d-grid gap-2 mt-3">
+              <button type="submit" class="btn btn-primary btn-lg">Registrar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <!-- Formulario de tipo de usuario -->
-  <div>
-      <label for="id_tipo_usuario">Tipo de Usuario:</label>
-      {{ tipo_usuario_form.tipo_usuario }}
-  </div>
-
-  <button type="submit">Registrar</button>
-</form>
+</div>
+{% endblock %}

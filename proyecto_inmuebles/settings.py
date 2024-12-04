@@ -29,8 +29,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'gestion_inmuebles'
+    'gestion_inmuebles',
+    'crispy_forms',
+    'crispy_bootstrap5'
 ]
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
 AUTH_USER_MODEL = 'gestion_inmuebles.User'
 
 MIDDLEWARE = [
@@ -114,6 +118,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# En caso de que quieras cargar los archivos estáticos desde una carpeta específica
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # Usualmente la carpeta static está en el mismo nivel que manage.py
+]
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
