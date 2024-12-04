@@ -23,53 +23,39 @@ def home(request):
 
 def register(request):
     if request.method == "POST":
-        user_form = CustomUserCreationForm(
-            request.POST
-        )  # Cambiar a formulario personalizado
+        user_form = CustomUserCreationForm(request.POST)
         tipo_usuario_form = TipoUsuarioForm(request.POST)
 
         if user_form.is_valid() and tipo_usuario_form.is_valid():
-            # Guarda el usuario
             user = user_form.save()
-            # Asigna el tipo de usuario
             tipo_usuario = tipo_usuario_form.cleaned_data["tipo_usuario"]
-            user.tipo_usuario = (
-                tipo_usuario  # Establece el tipo de usuario en el modelo
-            )
-            user.save()  # Guarda el usuario con el tipo de usuario
+            user.tipo_usuario = tipo_usuario
+            user.save()
 
-            # Crear el perfil asociado al usuario
+            # Crear el perfil
             perfil = Perfil.objects.create(user=user)
             perfil.save()
 
             login(request, user)
 
-            # Asignar el grupo según el tipo de usuario
+            # Asignar al grupo según el tipo de usuario
             if tipo_usuario == "Arrendatario":
                 group = Group.objects.get(name="Arrendatario")
+                return redirect("perfil_usuario")  # Redirigir al perfil de arrendatario
             else:
                 group = Group.objects.get(name="Arrendador")
+                return redirect("publicar_inmueble")  # Redirigir al formulario de publicación de inmuebles
 
-            # Asignar al usuario el grupo correspondiente
             user.groups.add(group)
 
-            return redirect("home")
         else:
-            # Bloque para depurar errores si los formularios no son válidos
-            print(
-                user_form.errors, tipo_usuario_form.errors
-            )  # Redirige a la página de inicio o a la página que desees
+            print(user_form.errors, tipo_usuario_form.errors)
 
     else:
-        user_form = CustomUserCreationForm()  # Cambiar a formulario personalizado
+        user_form = CustomUserCreationForm()
         tipo_usuario_form = TipoUsuarioForm()
 
-    return render(
-        request,
-        "registration/register.html",
-        {"user_form": user_form, "tipo_usuario_form": tipo_usuario_form},
-    )
-
+    return render(request, "registration/register.html", {"user_form": user_form, "tipo_usuario_form": tipo_usuario_form})
 
 class CustomLoginView(LoginView):
     template_name = "registration/login.html"
@@ -168,7 +154,7 @@ def editar_perfil(request):
         form = PerfilForm(request.POST, instance=perfil)
         if form.is_valid():
             form.save()
-            return redirect("home")  # Redirige a la página principal después de guardar
+            return redirect("perfil_usuario")  # Redirige al perfil después de editarlo
     else:
         form = PerfilForm(instance=perfil)
 
@@ -179,15 +165,11 @@ def editar_perfil(request):
 @login_required
 def cambiar_contraseña(request):
     if request.method == "POST":
-        form = CustomPasswordChangeForm(
-            request.user, request.POST
-        )  # Asegúrate de que estás pasando el usuario logueado
+        form = CustomPasswordChangeForm(request.user, request.POST)
         if form.is_valid():
-            form.save()  # Guarda la nueva contraseña
-            update_session_auth_hash(
-                request, form.user
-            )  # Mantiene la sesión activa después del cambio
-            return redirect("home")  # Redirige a la página principal
+            form.save()
+            update_session_auth_hash(request, form.user)  # Mantiene la sesión activa después del cambio
+            return redirect("perfil_usuario")
     else:
         form = CustomPasswordChangeForm(request.user)
 
