@@ -124,6 +124,10 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",  # Usualmente la carpeta static está en el mismo nivel que manage.py
 ]
 
+# Configuración para archivos multimedia
+MEDIA_URL = '/media/'  # URL a la que se acceden los archivos multimedia
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Ruta física en el sistema de archivos donde se almacenan
+
 
 
 # Default primary key field type

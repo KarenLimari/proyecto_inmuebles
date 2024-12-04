@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ inmueble.nombre }}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <h2 class="text-center mb-4">{{ inmueble.nombre }}</h2>
+  <div class="row">
+    <div class="col-md-6">
+      <!-- Carrusel de imágenes del inmueble -->
+      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          {% for imagen in inmueble.imagenes.all %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+              <img src="{{ imagen.imagen.url }}" class="d-block w-100" alt="{{ inmueble.nombre }}">
+            </div>
+          {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h3>Características</h3>
+      <ul>
+        <li><strong>Dirección:</strong> {{ inmueble.direccion }}</li>
+        <li><strong>Comuna:</strong> {{ inmueble.comuna.nombre }}</li>
+        <li><strong>Región:</strong> {{ inmueble.comuna.region.nombre }}</li>
+        <li><strong>Precio mensual:</strong> ${{ inmueble.precio_mensual }}</li>
+        <li><strong>Habitaciones:</strong> {{ inmueble.habitaciones }}</li>
+        <li><strong>Baños:</strong> {{ inmueble.banos }}</li>
+        <li><strong>Estacionamientos:</strong> {{ inmueble.estacionamientos }}</li>
+        <li><strong>Metros construidos:</strong> {{ inmueble.m2_construidos }} m²</li>
+        <li><strong>Metros totales:</strong> {{ inmueble.m2_totales }} m²</li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

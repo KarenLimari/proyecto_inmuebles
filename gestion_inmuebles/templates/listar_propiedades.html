@@ -1,13 +1,29 @@
-<!-- templates/listar_propiedades.html -->
 {% extends 'base.html' %}
+{% load static %}
 
-{% block title %}Listado de Propiedades{% endblock %}
+{% block title %}Lista de Propiedades{% endblock %}
 
 {% block content %}
-<h2>Propiedades Disponibles</h2>
-<ul>
+<div class="container py-5">
+  <h2 class="text-center mb-4">Propiedades Disponibles</h2>
+  <div class="row">
     {% for inmueble in inmuebles %}
-        <li>{{ inmueble.nombre }} - {{ inmueble.comuna.nombre }} - ${{ inmueble.precio_mensual }} por mes</li>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          {% if inmueble.imagenes.first %}
+            <img src="{{ inmueble.imagenes.first.imagen.url }}" class="card-img-top" alt="{{ inmueble.nombre }}">
+          {% else %}
+            <img src="{% static 'images/default.jpg' %}" class="card-img-top" alt="Sin imagen disponible">
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title">{{ inmueble.nombre }}</h5>
+            <p class="card-text">{{ inmueble.direccion }}</p>
+            <p class="card-text"><strong>${{ inmueble.precio_mensual }}</strong></p>
+            <a href="{% url 'detalle_inmueble' inmueble.slug %}" class="btn btn-primary">Ver más</a>
+          </div>
+        </div>
+      </div>
     {% endfor %}
-</ul>
+  </div>
+</div>
 {% endblock %}

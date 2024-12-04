@@ -1,16 +1,73 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block title %}Bienvenido{% endblock %}
-
+{% block title %}Bienvenido a Inmobiliaria{% endblock %}
 {% block content %}
-  <h2>¡Bienvenido, {{ user.username }}!</h2>
+  <!-- Carrusel de imágenes con leyenda, ahora en ancho completo y responsivo -->
+  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+    <div class="carousel-inner">
+      <!-- Imagen 1 -->
+      <div class="carousel-item active">
+        <img src="{% static 'images/portada1.jpg' %}" class="d-block w-100" alt="Imagen 1" style="height: 60vh; object-fit: cover;">
+        <div class="carousel-caption d-none d-md-block">
+          <h2>Encuentra el hogar de tus sueños</h2>
+          <p class="lead">Accede a propiedades exclusivas en el mercado.</p>
+          <a href="{% url 'listar_propiedades' %}" class="btn btn-primary btn-lg">Ver Inmuebles</a>
+        </div>
+      </div>
 
-  <p>En este sitio puedes gestionar inmuebles, tanto como arrendatario o arrendador.</p>
+      <!-- Imagen 2 -->
+      <div class="carousel-item">
+        <img src="{% static 'images/portada2.jpg' %}" class="d-block w-100" alt="Imagen 2" style="height: 60vh; object-fit: cover;">
+        <div class="carousel-caption d-none d-md-block">
+          <h2>Hogares a tu medida</h2>
+          <p class="lead">Encuentra el lugar perfecto para ti y tu familia.</p>
+          <a href="{% url 'listar_propiedades' %}" class="btn btn-primary btn-lg">Ver Inmuebles</a>
+        </div>
+      </div>
 
-  <div>
-    <a href="{% url 'editar_perfil' %}">Editar Perfil</a>
+      <!-- Imagen 3 -->
+      <div class="carousel-item">
+        <img src="{% static 'images/portada3.jpg' %}" class="d-block w-100" alt="Imagen 3" style="height: 60vh; object-fit: cover;">
+        <div class="carousel-caption d-none d-md-block">
+          <h2>Viviendas para todos</h2>
+          <p class="lead">Comodidad y estilo a tu alcance.</p>
+          <a href="{% url 'listar_propiedades' %}" class="btn btn-primary btn-lg">Ver Inmuebles</a>
+        </div>
+      </div>
+
+      <!-- Imagen 4 -->
+      <div class="carousel-item">
+        <img src="{% static 'images/portada4.jpg' %}" class="d-block w-100" alt="Imagen 4" style="height: 60vh; object-fit: cover;">
+        <div class="carousel-caption d-none d-md-block">
+          <h2>¡Hazlo tuyo!</h2>
+          <p class="lead">Descubre las mejores ofertas de propiedades.</p>
+          <a href="{% url 'listar_propiedades' %}" class="btn btn-primary btn-lg">Ver Inmuebles</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controles del carrusel -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-  <div>
-    <a href="{% url 'cambiar_contraseña' %}">Cambiar Contraseña</a>
+
+<!-- Texto de bienvenida debajo del carrusel, con un diseño bonito y color pastel -->
+<div class="container-fluid py-3" style="background-color: #f7f8fa; border-radius: 10px; padding-left: 0; padding-right: 0;">
+  <div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10 text-center">
+      <h2 class="text-dark mb-3" style="font-family: 'Roboto', sans-serif; font-size: 2rem;">Bienvenido a nuestra Inmobiliaria</h2>
+      <p class="lead text-dark" style="font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 1.1rem;">
+        Encuentra el hogar de tus sueños con nosotros. Explora nuestras propiedades y elige el lugar ideal para ti y tu familia.
+      </p>
+    </div>
   </div>
+</div>
+
 {% endblock %}

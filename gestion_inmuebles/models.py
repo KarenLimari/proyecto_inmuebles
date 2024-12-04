@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.utils.text import slugify
 
 
 TIPOS_INMUEBLES = [
@@ -47,14 +48,28 @@ class Inmueble(models.Model):
     habitaciones = models.IntegerField()
     banos = models.IntegerField()
     direccion = models.CharField(max_length=200)
-    comuna = models.ForeignKey(Comuna, on_delete=models.CASCADE)  # Relacionar con Comuna
+    comuna = models.ForeignKey(Comuna, on_delete=models.CASCADE)  # Relacion con Comuna
     tipo_inmueble = models.ForeignKey(TipoInmueble, on_delete=models.SET_NULL, null=True)
+    region = models.ForeignKey(Region, on_delete=models.CASCADE, null=True)  # Permitir null
     precio_mensual = models.DecimalField(max_digits=10, decimal_places=2)
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    slug = models.SlugField(unique=True, blank=True)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.nombre)
+        super().save(*args, **kwargs)
 
     def __str__(self):
-        return f"{self.nombre} - {self.comuna.nombre}"
+        return self.nombre
+    
+class ImagenInmueble(models.Model):
+    inmueble = models.ForeignKey(Inmueble, related_name='imagenes', on_delete=models.CASCADE)
+    imagen = models.ImageField(upload_to='inmuebles/', null=True, blank=True)
+    imagen_url = models.URLField(null=True, blank=True)  # Si no se sube imagen, permite una URL.
 
+    def __str__(self):
+        return f"Imagen de {self.inmueble.nombre}"
 # Modelo Perfil relacionado con el usuario
 class Perfil(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
