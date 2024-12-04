@@ -1,40 +1,23 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
-{% block title %}Propiedades Destacadas{% endblock %}
+{% block title %}Publicar Inmueble{% endblock %}
 
 {% block content %}
 <div class="container py-5">
-  <h2 class="text-center mb-5" style="color: #6c757d;">Propiedades Destacadas</h2>
-  
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    {% for inmueble in inmuebles %}
-    <div class="col">
-      <div class="card shadow-sm border-0" style="border-radius: 10px;">
-        <!-- Imagen de la propiedad -->
-        <img src="{{ inmueble.imagenes.first.imagen.url }}" 
-             class="card-img-top" 
-             alt="{{ inmueble.nombre }}" 
-             style="height: 200px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+  <h2 class="text-center mb-4">Publicar Inmueble</h2>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form|crispy }}
 
-        <!-- Detalles de la propiedad -->
-        <div class="card-body" style="background-color: #f8f9fa;">
-          <h5 class="card-title text-center" style="color: #343a40;">{{ inmueble.nombre }}</h5>
-          <p class="card-text text-center" style="color: #6c757d;">
-            <strong>Precio:</strong> ${{ inmueble.precio_mensual|floatformat:0 }} CLP
-          </p>
-        </div>
-
-        <!-- Botón de ver más -->
-        <div class="card-footer text-center" style="background-color: #ffffff; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-          <a href="{% url 'detalle_inmueble' inmueble.slug %}" 
-             class="btn btn-outline-primary btn-sm">
-             Ver Detalles
-          </a>
-        </div>
-      </div>
+    <!-- Campo para subir múltiples imágenes -->
+    <div class="form-group">
+      <label for="imagenes">Imágenes del inmueble:</label>
+      <input type="file" name="imagenes" id="imagenes" multiple class="form-control">
     </div>
-    {% endfor %}
-  </div>
+    
+    <button type="submit" class="btn btn-primary mt-3">Publicar</button>
+  </form>
 </div>
 {% endblock %}
