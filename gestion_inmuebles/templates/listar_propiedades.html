@@ -1,28 +1,39 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Lista de Propiedades{% endblock %}
+{% block title %}Propiedades Destacadas{% endblock %}
 
 {% block content %}
 <div class="container py-5">
-  <h2 class="text-center mb-4">Propiedades Disponibles</h2>
-  <div class="row">
+  <h2 class="text-center mb-5" style="color: #6c757d;">Propiedades Destacadas</h2>
+  
+  <div class="row row-cols-1 row-cols-md-3 g-4">
     {% for inmueble in inmuebles %}
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          {% if inmueble.imagenes.first %}
-            <img src="{{ inmueble.imagenes.first.imagen.url }}" class="card-img-top" alt="{{ inmueble.nombre }}">
-          {% else %}
-            <img src="{% static 'images/default.jpg' %}" class="card-img-top" alt="Sin imagen disponible">
-          {% endif %}
-          <div class="card-body">
-            <h5 class="card-title">{{ inmueble.nombre }}</h5>
-            <p class="card-text">{{ inmueble.direccion }}</p>
-            <p class="card-text"><strong>${{ inmueble.precio_mensual }}</strong></p>
-            <a href="{% url 'detalle_inmueble' inmueble.slug %}" class="btn btn-primary">Ver más</a>
-          </div>
+    <div class="col">
+      <div class="card shadow-sm border-0" style="border-radius: 10px;">
+        <!-- Imagen de la propiedad -->
+        <img src="{{ inmueble.imagenes.first.imagen.url }}" 
+             class="card-img-top" 
+             alt="{{ inmueble.nombre }}" 
+             style="height: 200px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+        <!-- Detalles de la propiedad -->
+        <div class="card-body" style="background-color: #f8f9fa;">
+          <h5 class="card-title text-center" style="color: #343a40;">{{ inmueble.nombre }}</h5>
+          <p class="card-text text-center" style="color: #6c757d;">
+            <strong>Precio:</strong> ${{ inmueble.precio_mensual|floatformat:0 }} CLP
+          </p>
+        </div>
+
+        <!-- Botón de ver más -->
+        <div class="card-footer text-center" style="background-color: #ffffff; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+          <a href="{% url 'detalle_inmueble' inmueble.slug %}" 
+             class="btn btn-outline-primary btn-sm">
+             Ver Detalles
+          </a>
         </div>
       </div>
+    </div>
     {% endfor %}
   </div>
 </div>

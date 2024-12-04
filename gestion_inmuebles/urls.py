@@ -14,3 +14,4 @@ urlpatterns = [
     path('inmuebles/', views.listar_propiedades, name='listar_propiedades'),  # Listado de inmuebles
     path('inmueble/<int:inmueble_id>/', views.detalle_inmueble, name='detalle_inmueble'),  # Detalles de inmueble
 ]
+

@@ -71,6 +71,7 @@ class ImagenInmueble(models.Model):
     def __str__(self):
         return f"Imagen de {self.inmueble.nombre}"
 # Modelo Perfil relacionado con el usuario
+
 class Perfil(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     direccion = models.CharField(max_length=255, default='')  # Valor por defecto vacío

@@ -31,9 +31,10 @@
       <h3>Características</h3>
       <ul>
         <li><strong>Dirección:</strong> {{ inmueble.direccion }}</li>
+        <li><strong>Descripción:</strong> {{ inmueble.descripcion }}</li>
         <li><strong>Comuna:</strong> {{ inmueble.comuna.nombre }}</li>
         <li><strong>Región:</strong> {{ inmueble.comuna.region.nombre }}</li>
-        <li><strong>Precio mensual:</strong> ${{ inmueble.precio_mensual }}</li>
+        <li><strong>Precio mensual:</strong> ${{ inmueble.precio_mensual|floatformat:0 }}</li>
         <li><strong>Habitaciones:</strong> {{ inmueble.habitaciones }}</li>
         <li><strong>Baños:</strong> {{ inmueble.banos }}</li>
         <li><strong>Estacionamientos:</strong> {{ inmueble.estacionamientos }}</li>

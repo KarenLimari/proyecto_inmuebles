@@ -21,21 +21,26 @@ class ComunaAdmin(admin.ModelAdmin):
 class TipoInmuebleAdmin(admin.ModelAdmin):
     list_display = ('tipo',)
 
+class ImagenInmuebleInline(admin.TabularInline):  # O usa StackedInline si prefieres el diseño vertical
+    model = ImagenInmueble
+    extra = 1  # Esto añade un formulario adicional vacío para añadir más imágenes
+    fields = ['imagen', 'imagen_url']  # Los campos que deseas mostrar en el inline
+
 @admin.register(Inmueble)
 class InmuebleAdmin(admin.ModelAdmin):
     list_display = ('nombre', 'descripcion', 'precio_mensual', 'region', 'comuna', 'tipo_inmueble', 'slug', 'mostrar_imagenes')
     search_fields = ('nombre', 'descripcion')
     list_filter = ('comuna', 'tipo_inmueble')
+    inlines = [ImagenInmuebleInline]  # Asegúrate de agregar esto para que puedas ver y agregar imágenes desde el admin
 
-    # Función para mostrar las imágenes en list_display
     def mostrar_imagenes(self, obj):
         imagenes = obj.imagenes.all()  # Obtiene todas las imágenes asociadas al inmueble
-        # Devuelve un string con las URLs de las imágenes o las visualiza
         return ", ".join([f'<img src="{imagen.imagen.url}" style="width:50px;height:50px;" />' for imagen in imagenes])
-    mostrar_imagenes.allow_tags = True  # Habilita el renderizado de HTML (las imágenes)
+    mostrar_imagenes.allow_tags = True  # Permite el renderizado de HTML
     mostrar_imagenes.short_description = 'Imágenes'
-    
+
+# Si también quieres poder gestionar las imágenes de forma separada:
 @admin.register(ImagenInmueble)
 class ImagenInmuebleAdmin(admin.ModelAdmin):
     list_display = ('inmueble', 'imagen', 'imagen_url')
-    search_fields = ('inmueble__nombre',)  # Para poder buscar por el nombre del inmueble
+    search_fields = ('inmueble__nombre',) 

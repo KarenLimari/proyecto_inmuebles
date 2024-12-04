@@ -67,6 +67,31 @@
         Encuentra el hogar de tus sueños con nosotros. Explora nuestras propiedades y elige el lugar ideal para ti y tu familia.
       </p>
     </div>
+    <div class="container py-5">
+      <h2 class="text-center mb-4">Propiedades Destacadas</h2>
+      <div class="row">
+        {% for inmueble in inmuebles_destacados %}
+        <div class="col-md-4">
+          <div class="card shadow-sm mb-4">
+            <img 
+              src="{{ inmueble.imagenes.first.imagen.url }}" 
+              class="card-img-top" 
+              alt="{{ inmueble.nombre }}" 
+              style="height: 200px; object-fit: cover;"
+            >
+            <div class="card-body">
+              <h5 class="card-title">{{ inmueble.nombre }}</h5>
+              <p class="card-text">
+                <strong>Precio:</strong> ${{ inmueble.precio_mensual|floatformat:0 }} CLP
+              </p>
+              <a href="{% url 'detalle_inmueble' slug=inmueble.slug %}" class="btn btn-primary">Ver más</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    
   </div>
 </div>
 

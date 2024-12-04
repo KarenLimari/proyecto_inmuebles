@@ -18,8 +18,7 @@ from .forms import (
 
 
 def home(request):
-    # Obtén las primeras 4 propiedades destacadas (o las más recientes)
-    inmuebles_destacados = Inmueble.objects.all()[:4]  # Puedes usar un filtro específico si necesitas
+    inmuebles_destacados = Inmueble.objects.all()[:3]  # Selecciona los primeros 3 inmuebles
     return render(request, 'home.html', {'inmuebles_destacados': inmuebles_destacados})
 
 def register(request):
